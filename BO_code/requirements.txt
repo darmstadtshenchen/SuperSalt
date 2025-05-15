@@ -1,0 +1,13 @@
+numpy
+pandas
+scikit-learn
+optuna
+xgboost
+lightgbm
+torch
+botorch
+gpytorch
+pygmo
+scikit-opt
+ray
+matplotlib

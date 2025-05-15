@@ -1,0 +1,22 @@
+// This example script ranks attributes based on their ability
+//  to predict formation energy for a set of compounds, and then generates
+//  a reduced subset of attributes with Weka
+
+// Load in a dataset of compound properties
+data = new data.materials.CompositionDataset
+data import ../Dataprocessing/processing_data.txt
+
+// Get only the ground-state instances of each compound
+// data duplicates RankingDuplicateResolver minmize PropertyRanker energy_pa SimpleEntryRanker
+
+// Define where to find elemental property data
+data attributes properties directory ./lookup-data/
+// Select which set of elemental properties to use for attributes
+data attributes properties add set general
+
+// Generate new attributes
+data attributes generate
+
+save data ../Dataprocessing/processing_data json
+
+exit
